@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {vehiclesGetData} from '../actions/vehicles';
+import {vehiclesGetData} from '../../actions/vehicles';
 
 class Vehicles extends Component {
   constructor(props) {

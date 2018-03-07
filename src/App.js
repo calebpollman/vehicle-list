@@ -2,8 +2,8 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Vehicles from './containers/Vehicles';
-import Vehicle from './containers/Vehicle';
+import Vehicles from './containers/Vehicles/Vehicles';
+import Vehicle from './containers/Vehicle/Vehicle';
 import './App.css';
 
 const App = ({store}) => {
