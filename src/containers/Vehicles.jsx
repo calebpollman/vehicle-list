@@ -16,7 +16,7 @@ class Vehicles extends Component {
   render() {
     console.log(this.props);
     return (
-      <div>Hello Again!</div>
+      <div>Vehicles</div>
     );
   }
 };

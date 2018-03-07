@@ -1,15 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {Provider} from 'react-redux';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Vehicles from './containers/Vehicles';
+import Vehicle from './containers/Vehicle';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Vehicles />
-      </div>
-    );
-  }
+const App = ({store}) => {
+  return (
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Vehicles} />
+          <Route path="/:id" component={Vehicle} />
+        </Switch>
+      </Router>
+    </Provider>
+  ); 
+}
+
+App.propTypes = {
+  store: PropTypes.object.isRequired,
 }
 
 export default App;

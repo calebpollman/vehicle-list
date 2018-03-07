@@ -1,29 +1,29 @@
 import axios from 'axios';
 
-export const vehiclesHasError = bool => {
+export const vehicleHasError = bool => {
   return {
-    type: 'VEHICLES_HAS_ERROR',
+    type: 'VEHICLE_HAS_ERROR',
     hasError: bool
   };
 }
 
-export const vehiclesIsLoading = bool => {
+export const vehicleIsLoading = bool => {
   return {
-      type: 'VEHICLES_IS_LOADING',
+      type: 'VEHICLE_IS_LOADING',
       isLoading: bool
   };
 }
 
-export const vehiclesGetDataSuccess = vehicles => {
+export const vehicleGetDataSuccess = vehicle => {
   return {
-      type: 'VEHICLES_GET_DATA_SUCCESS',
-      vehicles
+      type: 'VEHICLE_GET_DATA_SUCCESS',
+      vehicle
   };
 }
 
-export const vehiclesGetData = () => {
+export const vehicleGetData = (id) => {
   return (dispatch) => {
-    dispatch(vehiclesIsLoading(true));
+    dispatch(vehicleIsLoading(true));
     const url = 'https://gist.githubusercontent.com/creatifyme/2a334c00a117097bfdb47f031edf292c/raw/efb52ecf1cf92e2261f504ec7639c68b5ff390bd/cars.json'
 
     return axios({
@@ -33,11 +33,11 @@ export const vehiclesGetData = () => {
       responseType: 'json',
     })
     .then(response => {
-      dispatch(vehiclesIsLoading(false));
-      dispatch(vehiclesGetDataSuccess(response.data));
+      dispatch(vehicleIsLoading(false));
+      dispatch(vehicleGetDataSuccess(response.data[id]));
     })
     .catch(response => {
-      dispatch(vehiclesHasError(response.data));
+      dispatch(vehicleHasError(response.data));
     });
   };
 }
