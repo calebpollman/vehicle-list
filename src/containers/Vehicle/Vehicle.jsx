@@ -15,7 +15,6 @@ class Vehicle extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>Vehicle</div>
     );
