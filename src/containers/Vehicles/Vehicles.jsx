@@ -9,11 +9,13 @@ class Vehicles extends Component {
     
     this.state = {
       searchTerm: '',
+      sortSelection: 'Year',
       vehicles: [],
       updateVehicles: this.props.vehicles,
     }
 
     this.updateSearchTerm = this.updateSearchTerm.bind(this);
+    this.updateSortOption = this.updateSortOption.bind(this);
   }
 
   componentDidMount() {
@@ -27,7 +29,16 @@ class Vehicles extends Component {
     this.setState({searchTerm});
   }
 
+  updateSortOption(event, value) {
+    event.preventDefault();
+    let {sortOption} = this.state;
+    sortOption = value;
+    
+    this.setState({sortOption});
+  }
+
   render() {
+
     return (
       <div className="vehicles-container">
         <SearchBar updateSearchTerm={this.updateSearchTerm} />
