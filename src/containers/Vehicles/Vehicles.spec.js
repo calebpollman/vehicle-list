@@ -16,7 +16,11 @@ describe('Vehicles', () => {
     wrapper = shallow(<Vehicles store={store} />).dive();
   });
 
-  it('should render a <div />', () => {
+  it('should render a wrapper <div />', () => {
     expect(wrapper.find('div').length).toEqual(1);
+  });
+
+  it('should contain the <SearchBar />', () => {
+    expect(wrapper.find('SearchBar').length).toEqual(1);
   });
 });
