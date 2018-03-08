@@ -28,7 +28,6 @@ class Vehicles extends Component {
   }
 
   render() {
-    console.log(this.state.searchTerm)
     return (
       <div className="vehicles-container">
         <SearchBar updateSearchTerm={this.updateSearchTerm} />
