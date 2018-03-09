@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const ListDetail = ({vehicle}) => {
   return (
     <div className="list-detail-container">
+      {vehicle.title}
     </div>
   );
 }

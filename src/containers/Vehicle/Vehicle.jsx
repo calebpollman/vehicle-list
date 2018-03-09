@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router';
 import {vehiclesGetData} from '../../actions/vehicles';
+import ListDetail from '../../components/ListDetail/ListDetail';
 
 class Vehicle extends Component {
   constructor(props) {
@@ -33,12 +34,13 @@ class Vehicle extends Component {
 
   render() {
     const {redirect, vehicle} = this.state;
-    console.log(vehicle)
 
     if (redirect) return <Redirect to="/" />;
 
     return (
-      <div>Vehicle</div>
+      <div className="vehicle-container">
+        <ListDetail vehicle={vehicle} />
+      </div>
     );
   }
 };

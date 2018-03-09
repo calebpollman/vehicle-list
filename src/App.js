@@ -4,13 +4,12 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Vehicles from './containers/Vehicles/Vehicles';
 import Vehicle from './containers/Vehicle/Vehicle';
-import './App.css';
 
 const App = ({store}) => {
   return (
     <Provider store={store}>
       <Router>
-        <Switch>
+        <Switch className="App">
           <Route exact path="/" component={Vehicles} />
           <Route path="/:id" component={Vehicle} />
         </Switch>
