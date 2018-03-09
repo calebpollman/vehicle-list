@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {vehiclesGetData} from '../../actions/vehicles';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import SortBar from '../../components/SortBar/SortBar';
+import List from '../../components/List/List';
 
 class Vehicles extends Component {
   constructor(props) {
@@ -9,17 +11,22 @@ class Vehicles extends Component {
     
     this.state = {
       searchTerm: '',
-      sortSelection: 'Year',
+      sortSelection: 'year',
       vehicles: [],
-      updateVehicles: this.props.vehicles,
     }
 
     this.updateSearchTerm = this.updateSearchTerm.bind(this);
-    this.updateSortOption = this.updateSortOption.bind(this);
+    this.updateSortSelection = this.updateSortSelection.bind(this);
   }
 
   componentDidMount() {
     this.props.vehiclesGetData();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.vehicles !== nextProps.vehicles) {
+      this.setState({vehicles: nextProps.vehicles});
+    }
   }
 
   updateSearchTerm(event) {
@@ -29,20 +36,32 @@ class Vehicles extends Component {
     this.setState({searchTerm});
   }
 
-  updateSortOption(event, value) {
+  updateSortSelection(event, value) {
     event.preventDefault();
-    let {sortOption} = this.state;
-    sortOption = value;
+    let {sortSelection} = this.state;
+    sortSelection = value;
     
-    this.setState({sortOption});
+    this.setState({sortSelection});
   }
 
   render() {
+    let {sortSelection, vehicles} = this.state;
+    
+    vehicles = vehicles.sort((vehicleOne, vehicleTwo) => {
+      vehicleOne = vehicleOne[sortSelection]; 
+      vehicleTwo = vehicleTwo[sortSelection];
+      return ((vehicleOne < vehicleTwo) ? -1 : ((vehicleOne > vehicleTwo) ? 1 : 0));
+    });
 
     return (
       <div className="vehicles-container">
         <SearchBar updateSearchTerm={this.updateSearchTerm} />
-        <p>Vehicles</p>
+        <SortBar 
+          sortOptions={['year', 'make', 'model']}
+          sortSelection={sortSelection}
+          updateSortSelection={this.updateSortSelection}
+        />
+        <List vehicles={vehicles} />
       </div>
     );
   }
