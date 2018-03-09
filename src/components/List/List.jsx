@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ListItem from '../ListItem/ListItem';
 
 const List = ({vehicles}) => {
+  
   if (vehicles.length === 0) {
     vehicles = <p>LOADING</p>;
   } else {
