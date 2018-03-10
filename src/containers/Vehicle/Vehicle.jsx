@@ -15,10 +15,10 @@ class Vehicle extends Component {
   }
 
   componentDidMount() {
-    const {vehicles} = this.props;
-    const id = this.props.match.params.id;
+    let {vehicles} = this.props;
+    const id = this.props.match === undefined ? '0' : this.props.match.params.id;
     
-    vehicles.length !== 0 ? this.setState({vehicle: vehicles[id]}) : this.props.vehiclesGetData();
+    vehicles !== undefined && vehicles.length > 0 ? this.setState({vehicle: vehicles[id]}) : this.props.vehiclesGetData();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -34,9 +34,9 @@ class Vehicle extends Component {
 
   render() {
     const {redirect, vehicle} = this.state;
-
+    
     if (redirect) return <Redirect to="/" />;
-
+    
     return (
       <div className="vehicle-container">
         <ListDetail vehicle={vehicle} />
@@ -47,6 +47,8 @@ class Vehicle extends Component {
 
 const mapStateToProps = state => {
   return {
+    // here
+    // match: {id: '0'},
     vehicle: state.vehicle,
     vehicles: state.vehicles,
     vehiclesHasError: state.vehiclesHasError,

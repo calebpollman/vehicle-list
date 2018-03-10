@@ -1,10 +1,11 @@
 import React from 'react';
+import './SearchBar.css';
 
 const SearchBar = ({updateSearchTerm}) => {
   return (
-    <div className="searchbar-container">
+    <div className="search-bar-container">
       <input
-        className="searchbar-input"
+        className="search-bar-input"
         onChange={event => updateSearchTerm(event)}
         placeholder="Search Vehicles"
       />

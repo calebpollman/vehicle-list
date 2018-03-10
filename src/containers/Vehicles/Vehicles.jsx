@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+  import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {vehiclesGetData} from '../../actions/vehicles';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import SortBar from '../../components/SortBar/SortBar';
 import List from '../../components/List/List';
+import './Vehicles.css';
 
 class Vehicles extends Component {
   constructor(props) {
@@ -20,7 +21,9 @@ class Vehicles extends Component {
   }
 
   componentDidMount() {
-    this.props.vehiclesGetData();
+    const {vehicles} = this.props;
+    
+    if (!vehicles) this.props.vehiclesGetData();
   }
 
   componentWillReceiveProps(nextProps) {
