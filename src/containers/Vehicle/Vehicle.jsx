@@ -38,7 +38,7 @@ class Vehicle extends Component {
     if (redirect) return <Redirect to="/" />;
     
     return (
-      <div className="vehicle-container">
+      <div className="view-container">
         <ListDetail vehicle={vehicle} />
       </div>
     );
@@ -47,8 +47,6 @@ class Vehicle extends Component {
 
 const mapStateToProps = state => {
   return {
-    // here
-    // match: {id: '0'},
     vehicle: state.vehicle,
     vehicles: state.vehicles,
     vehiclesHasError: state.vehiclesHasError,

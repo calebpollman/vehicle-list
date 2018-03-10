@@ -1,0 +1,17 @@
+/* 
+application and view styles
+*/
+
+#root {
+  align-items: center;
+  background-color: var(--main-background);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.view-container {
+  height: var(--view-height);
+  width: var(--view-width);;
+}

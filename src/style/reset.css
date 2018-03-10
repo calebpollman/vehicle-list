@@ -1,0 +1,9 @@
+/* 
+app css reset  
+*/
+
+body, div, ul, li, p {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

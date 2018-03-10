@@ -1,0 +1,42 @@
+/* 
+application variables
+*/
+
+:root {
+  /* font */
+  --application-font: 'Roboto', sans-serif;
+
+  /* font weight */
+  --weight-regular: 400;
+  --weight-bold: 700;
+
+  /* color */
+  /* --main-background: offwhite; */
+  --main-background: white;
+  /* --list-item-background: little more offwhite; */
+  --list-item-background: lightGrey;
+  /* --list-item-text: contrasts little more offwhite */
+  --list-item-text: darkGrey;
+  /* --searchbar-background: medium color; */
+  --searchbar-background: darkGrey;
+  /* --searchbar-text-color: contrasts medium color; */
+  --searchbar-text-color: lightGrey;
+  --search-icon-color: lightGrey;  
+  --close-icon-color: lightGrey;
+  
+  /* view size */
+  --view-height: 80%;
+  --view-width: 40%;
+}
+
+/* 
+media query for tablet or smaller screen 
+*/
+
+@media screen and (max-width: 1024px) {
+  :root {
+    /* view size */
+  --view-height: 100%;
+  --view-width: 100%;
+  }
+}

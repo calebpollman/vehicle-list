@@ -1,4 +1,4 @@
-  import React, {Component} from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {vehiclesGetData} from '../../actions/vehicles';
 import SearchBar from '../../components/SearchBar/SearchBar';
@@ -11,11 +11,13 @@ class Vehicles extends Component {
     super(props);
     
     this.state = {
+      searchActive: false,
       searchTerm: '',
       sortSelection: 'year',
       vehicles: [],
     }
 
+    this.toggleSearchActive = this.toggleSearchActive.bind(this);
     this.updateSearchTerm = this.updateSearchTerm.bind(this);
     this.updateSortSelection = this.updateSortSelection.bind(this);
   }
@@ -23,13 +25,20 @@ class Vehicles extends Component {
   componentDidMount() {
     const {vehicles} = this.props;
     
-    if (!vehicles) this.props.vehiclesGetData();
+    if (vehicles && vehicles.length === 0) this.props.vehiclesGetData();
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.vehicles !== nextProps.vehicles) {
       this.setState({vehicles: nextProps.vehicles});
     }
+  }
+
+  toggleSearchActive(event) {
+    event.preventDefault();
+    const {searchActive} = this.props;
+
+    this.setState({searchActive: !searchActive});
   }
 
   updateSearchTerm(event) {
@@ -48,7 +57,7 @@ class Vehicles extends Component {
   }
 
   render() {
-    let {sortSelection, vehicles} = this.state;
+    let {searchActive, sortSelection, vehicles} = this.state;
     
     vehicles = vehicles.sort((vehicleOne, vehicleTwo) => {
       vehicleOne = vehicleOne[sortSelection]; 
@@ -57,8 +66,12 @@ class Vehicles extends Component {
     });
 
     return (
-      <div className="vehicles-container">
-        <SearchBar updateSearchTerm={this.updateSearchTerm} />
+      <div className="view-container">
+        <SearchBar 
+          searchActive={searchActive}
+          toggleSearchActive={this.toggleSearchActive}
+          updateSearchTerm={this.updateSearchTerm} 
+        />
         <SortBar 
           sortOptions={['year', 'make', 'model']}
           sortSelection={sortSelection}
