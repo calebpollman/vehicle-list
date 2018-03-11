@@ -8,7 +8,7 @@ describe('SearchBar', () => {
     wrapper = shallow(<SearchBar />);
   });
 
-  it('renders a wrapper <div />', () => {
-    expect(wrapper.find('div').length).toEqual(1);
+  it('renders 2 <div />\'s', () => {
+    expect(wrapper.find('div').length).toEqual(2);
   });
 });

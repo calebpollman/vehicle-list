@@ -1,0 +1,11 @@
+.search-icon {
+  fill: var(--color-search-bar-icon);
+  height: var(--size-icon-medium);
+  width: var(--size-icon-medium);
+}
+
+.close-icon {
+  fill: var(--color-search-bar-icon);
+  height: var(--size-icon-medium);
+  width: var(--size-icon-medium);
+}

@@ -1,0 +1,17 @@
+.search-bar-input-container {
+  /* align-items: center; */
+  display: flex;
+  height: 100%;
+  margin-left: auto;
+  width: 100%;
+}
+
+.search-bar-input {
+  background-color: var(--color-search-bar-background);
+  border: transparent;
+  color: black;
+  font-size: var(--font-size-medium);
+  height: 100%;
+  outline: none;
+  width: 100%;
+}

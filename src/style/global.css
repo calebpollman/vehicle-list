@@ -4,7 +4,7 @@ application and view styles
 
 #root {
   align-items: center;
-  background-color: var(--main-background);
+  background-color: var(--view-main-background);
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -12,6 +12,6 @@ application and view styles
 }
 
 .view-container {
-  height: var(--view-height);
-  width: var(--view-width);;
+  height: var(--view-container-height);
+  width: var(--view-container-width);;
 }

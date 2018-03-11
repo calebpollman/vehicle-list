@@ -22,3 +22,7 @@ yarn-error.log*
 
 # notes
 notes.md
+todo.md
+
+# SearchBarIcon
+/src/components/SearchBarIcon

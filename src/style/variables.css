@@ -4,29 +4,45 @@ application variables
 
 :root {
   /* font */
-  --application-font: 'Roboto', sans-serif;
+  --font-application: 'Roboto', sans-serif;
+
+  /* font size */
+  --font-size-small: 1em;
+  --font-size-medium: 2em;
+  
+  /* icon size */
+  --size-icon-small: 1em;
+  --size-icon-medium: 2.8em;
+  /* --size-icon-medium: 100%; */
 
   /* font weight */
-  --weight-regular: 400;
-  --weight-bold: 700;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
 
   /* color */
+
+  /*  background */
+
   /* --main-background: offwhite; */
-  --main-background: white;
-  /* --list-item-background: little more offwhite; */
-  --list-item-background: lightGrey;
-  /* --list-item-text: contrasts little more offwhite */
-  --list-item-text: darkGrey;
-  /* --searchbar-background: medium color; */
-  --searchbar-background: darkGrey;
-  /* --searchbar-text-color: contrasts medium color; */
-  --searchbar-text-color: lightGrey;
-  --search-icon-color: lightGrey;  
-  --close-icon-color: lightGrey;
+  --color-view-background: white;
+  /* -- color-list-item-background: little more offwhite; */
+  /* --lightest: #f9f6f2; */
+  /* --color-search-bar-background: #b4a89a; */
+  --color-search-bar-background: #cabdad;
+  --color-list-item-background: lightGrey;
+  /* -- color-list-item-text: contrasts little more offwhite */
+  --color-list-item-text: darkGrey;
+  /* -- color-searchbar-background: medium color; */
+  
+  /* text and icons */
+
+  /* -- color-searchbar-text-color: contrasts medium color; */
+  --color-search-bar-text: #433f39;
+  --color-search-bar-icon: #433f39;
   
   /* view size */
-  --view-height: 80%;
-  --view-width: 40%;
+  --view-container-height: 80%;
+  --view-container-width: 40%;
 }
 
 /* 
@@ -36,7 +52,7 @@ media query for tablet or smaller screen
 @media screen and (max-width: 1024px) {
   :root {
     /* view size */
-  --view-height: 100%;
-  --view-width: 100%;
+  --view-container-height: 100%;
+  --view-container-width: 100%;
   }
 }

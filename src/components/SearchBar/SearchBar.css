@@ -1,4 +1,17 @@
 .search-bar-container {
-  height: 10%;
-  width: 100%;
+  background-color: var(--color-search-bar-background);
+  display: flex;
+  height: 6%;
+  padding: 2%;
+  width: 96%;
+}
+
+.search-bar-icon-container {
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+}
+
+.search-bar-icon-container:hover {
+  cursor: pointer;
 }

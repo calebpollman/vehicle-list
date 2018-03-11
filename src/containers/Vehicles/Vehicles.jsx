@@ -36,24 +36,18 @@ class Vehicles extends Component {
 
   toggleSearchActive(event) {
     event.preventDefault();
-    const {searchActive} = this.props;
-
-    this.setState({searchActive: !searchActive});
+    
+    this.setState(({searchActive}) => ({searchActive: !searchActive}));
   }
 
   updateSearchTerm(event) {
-    let {searchTerm} = this.state;
-    searchTerm = event.target.value;
-    
-    this.setState({searchTerm});
+    this.setState({searchTerm: event.target.value});
   }
 
   updateSortSelection(event, value) {
     event.preventDefault();
-    let {sortSelection} = this.state;
-    sortSelection = value;
-    
-    this.setState({sortSelection});
+  
+    this.setState(({sortSelection}) => ({sortSelection: value}));
   }
 
   render() {
@@ -72,12 +66,12 @@ class Vehicles extends Component {
           toggleSearchActive={this.toggleSearchActive}
           updateSearchTerm={this.updateSearchTerm} 
         />
-        <SortBar 
+        {/* <SortBar 
           sortOptions={['year', 'make', 'model']}
           sortSelection={sortSelection}
           updateSortSelection={this.updateSortSelection}
         />
-        <List vehicles={vehicles} />
+        <List vehicles={vehicles} /> */}
       </div>
     );
   }
