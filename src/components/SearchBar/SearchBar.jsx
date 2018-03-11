@@ -11,9 +11,7 @@ const SearchBar = ({searchActive, toggleSearchActive, updateSearchTerm}) => {
 
   return (
     <div className="search-bar-container">
-      <div className="search-bar-input-container">
-        {input}  
-      </div>
+      {input}  
       <div 
         className="search-bar-icon-container"
         onClick={event => {toggleSearchActive(event)}}
@@ -26,7 +24,7 @@ const SearchBar = ({searchActive, toggleSearchActive, updateSearchTerm}) => {
 
 SearchBar.propTypes = {
   searchActive: PropTypes.bool.isRequired, 
-  toggleSearchActive: PropTypes.func.isRequired, 
-  updateSearchTerm: PropTypes.func.isRequired,
+  toggleSearchActive: PropTypes.func, 
+  updateSearchTerm: PropTypes.func,
 }
 export default SearchBar;

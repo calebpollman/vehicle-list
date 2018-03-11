@@ -5,7 +5,7 @@ import SearchBar from './SearchBar';
 describe('SearchBar', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<SearchBar />);
+    wrapper = shallow(<SearchBar searchActive />);
   });
 
   it('renders 2 <div />\'s', () => {
