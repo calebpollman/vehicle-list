@@ -22,24 +22,23 @@ application variables
   /* color */
 
   /*  background */
-
-  /* --main-background: offwhite; */
   --color-view-background: white;
-  /* -- color-list-item-background: little more offwhite; */
-  /* --lightest: #f9f6f2; */
-  /* --color-search-bar-background: #b4a89a; */
   --color-search-bar-background: #cabdad;
+  --color-sort-bar-background: #d9d0c5;
+  --color-sort-button-background: #d9d0c5;
+  --color-sort-button-background-hover: #cabdad;
   --color-list-item-background: lightGrey;
-  /* -- color-list-item-text: contrasts little more offwhite */
-  --color-list-item-text: darkGrey;
-  /* -- color-searchbar-background: medium color; */
+  
   
   /* text and icons */
 
   /* -- color-searchbar-text-color: contrasts medium color; */
   --color-search-bar-text: #433f39;
   --color-search-bar-icon: #433f39;
-  
+  --color-sort-bar-text: #655e56;
+  --color-sort-bar-text-hover: #433f39;
+  --color-list-item-text: darkGrey;
+
   /* view size */
   --view-container-height: 80%;
   --view-container-width: 40%;

@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './SortButton.css';
 
 const SortButton = ({isActive, sortOption, updateSortSelection}) => {
+  let sortClass = 'sort-button';
+  if (isActive) sortClass = `${sortClass} ${sortClass}-active`;
+  
   return (
     <button 
-      className="sort-button"
-      onClick={event => updateSortSelection(event, sortOption)}
+      className={sortClass}
+      onClick={event => updateSortSelection(event, sortOption.toLowerCase())}
     >
       {sortOption}
     </button>

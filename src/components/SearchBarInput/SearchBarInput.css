@@ -1,5 +1,4 @@
 .search-bar-input-container {
-  /* align-items: center; */
   display: flex;
   height: 100%;
   margin-left: auto;
@@ -10,7 +9,9 @@
   background-color: var(--color-search-bar-background);
   border: transparent;
   color: black;
+  font-family: var(--font-application);
   font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-regular);
   height: 100%;
   outline: none;
   width: 100%;

@@ -66,12 +66,12 @@ class Vehicles extends Component {
           toggleSearchActive={this.toggleSearchActive}
           updateSearchTerm={this.updateSearchTerm} 
         />
-        {/* <SortBar 
-          sortOptions={['year', 'make', 'model']}
+        <SortBar 
+          sortOptions={['Year', 'Make', 'Model']}
           sortSelection={sortSelection}
           updateSortSelection={this.updateSortSelection}
         />
-        <List vehicles={vehicles} /> */}
+        {/* <List vehicles={vehicles} /> */}
       </div>
     );
   }

@@ -1,0 +1,22 @@
+.sort-button {
+  background-color: var(--color-sort-button-background);
+  border: none;
+  color: var(--color-sort-bar-text);
+  cursor: pointer;
+  font-family: var(--font-application);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  height: 100%;
+  outline: none;
+  transition: all linear 0.3s;
+  width: 20%;
+}
+
+.sort-button-active {
+  font-weight: var(--font-weight-bold);
+}
+
+.sort-button:hover {
+  background-color: var(--color-sort-button-background-hover);
+  color: var(--color-sort-bar-text-hover);
+}

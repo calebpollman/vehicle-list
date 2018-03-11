@@ -1,0 +1,15 @@
+.sort-bar-container {
+  align-items: center;
+  background-color: var(--color-sort-bar-background);
+  display: flex;
+  height: 4%;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.sort-bar-text {
+  color: var(--color-sort-bar-text);
+  font-family: var(--font-application);
+  font-size: var(--font-size-small);
+  margin-right: 2%;
+}
