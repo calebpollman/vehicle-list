@@ -71,7 +71,7 @@ class Vehicles extends Component {
           sortSelection={sortSelection}
           updateSortSelection={this.updateSortSelection}
         />
-        {/* <List vehicles={vehicles} /> */}
+        <List vehicles={vehicles} />
       </div>
     );
   }

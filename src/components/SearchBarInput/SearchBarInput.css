@@ -8,7 +8,7 @@
 .search-bar-input {
   background-color: var(--color-search-bar-background);
   border: transparent;
-  color: black;
+  color: var(--color-search-bar-text);
   font-family: var(--font-application);
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-regular);

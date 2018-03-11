@@ -13,7 +13,6 @@ application variables
   /* icon size */
   --size-icon-small: 1em;
   --size-icon-medium: 2.8em;
-  /* --size-icon-medium: 100%; */
 
   /* font weight */
   --font-weight-regular: 400;
@@ -27,7 +26,7 @@ application variables
   --color-sort-bar-background: #d9d0c5;
   --color-sort-button-background: #d9d0c5;
   --color-sort-button-background-hover: #cabdad;
-  --color-list-item-background: lightGrey;
+  --color-list-item-background: #d9d0c5;
   
   
   /* text and icons */
@@ -37,7 +36,8 @@ application variables
   --color-search-bar-icon: #433f39;
   --color-sort-bar-text: #655e56;
   --color-sort-bar-text-hover: #433f39;
-  --color-list-item-text: darkGrey;
+  --color-list-item-text: #433f39;
+  --color-list-item-sub-text: #655e56;
 
   /* view size */
   --view-container-height: 80%;

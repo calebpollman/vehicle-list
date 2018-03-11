@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import './ListItem.css';
 
 const ListItem = ({vehicle}) => {
   return (
-    <li className="list-item-container">
-      <Link to={`/${vehicle.id}`}>
-        {vehicle.title}
-      </Link>
-    </li>
+    <Link to={`/${vehicle.id}`} className="link-container">
+      <li className="list-item-container">
+        <p className="list-item-title">{vehicle.title}</p>
+        <p className="list-item-text">Mileage: {vehicle.mileage}</p>
+      </li>
+    </Link>
   );
 }
 

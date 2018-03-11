@@ -16,9 +16,13 @@ class Vehicle extends Component {
 
   componentDidMount() {
     let {vehicles} = this.props;
-    const id = this.props.match === undefined ? '0' : this.props.match.params.id;
-    
-    vehicles !== undefined && vehicles.length > 0 ? this.setState({vehicle: vehicles[id]}) : this.props.vehiclesGetData();
+
+    if (vehicles !== undefined && vehicles.length > 0) {
+      const id = this.props.match.params.id;
+      this.setState({vehicle: vehicles[id]})
+    } else {
+      this.props.vehiclesGetData();
+    }
   }
 
   componentWillReceiveProps(nextProps) {
