@@ -26,21 +26,12 @@ A basic rundown of where things are housed in the */src* directory.
 Contains Redux actions.
 
 ### components
-Houses the stateless components. Each component has a
-    *\_\_snapshots\_\_*
-    *ComponentName.jsx* 
-    *ComponentName.css*
-    *ComponentName.spec.js*
+Houses the stateless components. Each component has its own directory using the `ComponentName` and contains a *\_\_snapshots\_\_* directory, a *ComponentName.jsx* file, a *ComponentName.css* file, and a *ComponentName.spec.js* file.
 
 > Note the `<Icons />` component does not contain a spec file or snapshots directory.
 
 ### containers
-Houses the stateless containers. Structured like this:
-
-containers/
-  /ContainerName
-    *ContainerName.jsx* 
-    *ContainerName.spec.js*
+Houses the stateful containers. Each container has its own directory using the `ContainerName` and contains contains a *\_\_snapshots\_\_* directory, a *ContainerName.jsx* file, and a *ContainerName.spec.js* file.
 
 ### reducers
 Contains the Redux reducers.
