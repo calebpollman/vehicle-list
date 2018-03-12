@@ -18,6 +18,7 @@ ShallowWrapper {
             "year": "2013",
           }
     }
+    vehicleTitle=""
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -74,11 +75,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": "",
             "className": "list-item-title",
           },
           "ref": null,
-          "rendered": null,
+          "rendered": "",
           "type": "p",
         },
         Object {
@@ -153,11 +154,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": undefined,
+              "children": "",
               "className": "list-item-title",
             },
             "ref": null,
-            "rendered": null,
+            "rendered": "",
             "type": "p",
           },
           Object {

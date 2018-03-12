@@ -11,7 +11,6 @@ application variables
   --font-size-medium: 2em;
   
   /* icon size */
-  --size-icon-small: 1em;
   --size-icon-medium: 2.8em;
 
   /* font weight */
@@ -28,6 +27,7 @@ application variables
   --color-sort-button-background-hover: #cabdad;
   --color-list-background: #fdfcfc;
   --color-list-item-background: #d9d0c5;
+  --color-list-detail-background: #fdfcfc;
 
   /* text and icons */
   --color-search-bar-text: #433f39;
@@ -44,10 +44,13 @@ application variables
 
   /* list height */
   --list-container-height: 86%;
+
+  /* drop shadow */
+  --view-drop-shadow: drop-shadow(0em 0.5em 0.1em #cabdad);
 }
 
 /* 
-media query for tablet or smaller screen 
+media query for tablet
 */
 
 @media screen and (max-width: 1024px) {
@@ -56,7 +59,35 @@ media query for tablet or smaller screen
     --view-container-height: 92%;
     --view-container-width: 92%;
 
+    /* font size */
+    --font-size-small: 2em;
+    --font-size-medium: 3em;
+    
+    /* icon size */
+    --size-icon-medium: 4em;
+
     /* list height */
-    --list-container-height: 80%;
+    --list-container-height: 86%;
+
+    /* drop shadow */
+    --view-drop-shadow: drop-shadow(0em 0.5em 0.3em #cabdad);
+  }
+}
+
+/* 
+media query for mobile
+*/
+
+@media screen and (max-width: 812px) {
+  :root {
+    /* font size */
+    --font-size-small: 1em;
+    --font-size-medium: 2em;
+    
+    /* icon size */
+    --size-icon-medium: 2.8em;
+
+    /* list height */
+    --list-container-height: 90%;
   }
 }

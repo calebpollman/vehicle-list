@@ -17,7 +17,12 @@ describe('ListItem', () => {
   }
 
   beforeEach(() => {
-    wrapper = shallow(<ListItem vehicle={vehicle} />)
+    wrapper = shallow(
+      <ListItem 
+        vehicle={vehicle}
+        vehicleTitle={''} 
+      />
+    );
   });
 
   it('should render correctly', () => {

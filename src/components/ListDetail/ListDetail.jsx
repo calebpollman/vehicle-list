@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import './ListDetail.css';
 
 const ListDetail = ({vehicle}) => {
-  const vehicleTitle = `${vehicle.year} ${vehicle.make} ${vehicle.model}`
+  const vehicleTitle = `${vehicle.year} ${vehicle.make} ${vehicle.model}`;
+  
   return (
     <div className="list-detail-container">
       <img className="list-detail-image" src={vehicle.image_url} alt="not found" />
