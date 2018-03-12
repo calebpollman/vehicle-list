@@ -31,13 +31,13 @@ application variables
   
   /* text and icons */
 
-  /* -- color-searchbar-text-color: contrasts medium color; */
   --color-search-bar-text: #433f39;
   --color-search-bar-icon: #433f39;
   --color-sort-bar-text: #655e56;
   --color-sort-bar-text-hover: #433f39;
   --color-list-item-text: #433f39;
   --color-list-item-sub-text: #655e56;
+  --color-load-icon: #cabdad;
 
   /* view size */
   --view-container-height: 80%;

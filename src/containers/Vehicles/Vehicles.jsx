@@ -60,7 +60,7 @@ class Vehicles extends Component {
 
   render() {
     let {searchActive, searchResults, sortSelection, vehicles} = this.state;
-    
+    console.log(vehicles)
     vehicles = vehicles.sort((vehicleOne, vehicleTwo) => {
       vehicleOne = vehicleOne[sortSelection]; 
       vehicleTwo = vehicleTwo[sortSelection];

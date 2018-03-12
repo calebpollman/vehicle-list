@@ -1,5 +1,9 @@
 .list-container {
+  align-items: center;
   background-color: none;
+  display: flex;
+  flex-direction: column;
   height: 86%;
+  justify-content: center;
   overflow: scroll;
 }

@@ -9,3 +9,15 @@
   height: var(--size-icon-medium);
   width: var(--size-icon-medium);
 }
+
+.load-icon {
+  fill: var(--color-load-icon);
+  height: var(--size-icon-medium);
+  transform: rotate(360deg);
+  width: var(--size-icon-medium);
+}
+
+.test {
+  transform: rotate(180deg);
+  transform-origin: 50% 50%;
+}

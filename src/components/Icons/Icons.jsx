@@ -18,3 +18,13 @@ export const SearchIcon = () => {
     </svg>
   );
 }
+
+export const LoadIcon = () => {
+  return (
+    <svg className="load-icon" viewBox="0 0 36 36" width="36px" height="36px" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.5,18C1.5,8.9,8.9,1.5,18,1.5S34.5,8.9,34.5,18H36c0-9.9-8.1-18-18-18S0,8.1,0,18c0,9.9,8.1,18,18,18v-1.5 C8.9,34.5,1.5,27.1,1.5,18z">
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 18 18" to="360 18 18" dur="2s" repeatCount="indefinite" />
+      </path>
+    </svg>
+  );
+}

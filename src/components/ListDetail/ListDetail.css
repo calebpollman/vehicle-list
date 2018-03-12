@@ -1,0 +1,18 @@
+.list-detail-image {
+  width: 100%;
+}
+
+.list-detail-title {
+  color: var(--color-list-item-text);
+  font-family: var(--font-application);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-bold);
+  padding: 2%;
+}
+
+.list-detail-text {
+  color: var(--color-list-item-sub-text);
+  font-family: var(--font-application);
+  font-size: var(--font-size-small);
+  padding-left: 2%;
+}

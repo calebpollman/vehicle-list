@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ListItem from '../ListItem/ListItem';
+import {LoadIcon} from '../Icons/Icons';
 import './List.css';
 
 const List = ({searchActive, searchResults, vehicles}) => {
 
   if (vehicles.length === 0) {
-    vehicles = <p>LOADING</p>;
+    vehicles = <LoadIcon />;
   } else {
     vehicles = vehicles.map(vehicle => {
       return (
@@ -20,7 +21,7 @@ const List = ({searchActive, searchResults, vehicles}) => {
   
   return (
     <ul className="list-container">
-      {vehicles}
+      <LoadIcon />
     </ul>
   );
 }
