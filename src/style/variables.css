@@ -30,7 +30,6 @@ application variables
   
   
   /* text and icons */
-
   --color-search-bar-text: #433f39;
   --color-search-bar-icon: #433f39;
   --color-sort-bar-text: #655e56;
@@ -42,6 +41,9 @@ application variables
   /* view size */
   --view-container-height: 80%;
   --view-container-width: 40%;
+
+  /* list height */
+  --list-container-height: 86%;
 }
 
 /* 
@@ -51,7 +53,10 @@ media query for tablet or smaller screen
 @media screen and (max-width: 1024px) {
   :root {
     /* view size */
-  --view-container-height: 100%;
-  --view-container-width: 100%;
+    --view-container-height: 92%;
+    --view-container-width: 92%;
+
+    /* list height */
+    --list-container-height: 80%;
   }
 }

@@ -3,7 +3,7 @@
   background-color: none;
   display: flex;
   flex-direction: column;
-  height: 86%;
+  height: var(--list-container-height);
   justify-content: center;
   overflow: scroll;
 }

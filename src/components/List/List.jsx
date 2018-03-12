@@ -5,11 +5,8 @@ import {LoadIcon} from '../Icons/Icons';
 import './List.css';
 
 const List = ({listLoading, searchActive, searchResults, vehicles}) => {
-
-  listLoading ?
-    vehicles = <LoadIcon />
-  :
-    vehicles = vehicles.map(vehicle => {
+  const renderVehicles = (vehicles) => {
+    return vehicles.map(vehicle => {
       return (
         <ListItem 
           key={vehicle.id}
@@ -17,6 +14,11 @@ const List = ({listLoading, searchActive, searchResults, vehicles}) => {
         />
       );
     });
+  }
+  
+  listLoading ? 
+  vehicles = <LoadIcon /> : searchActive ? 
+  vehicles = renderVehicles(searchResults) : vehicles = renderVehicles(vehicles);
   
   return (
     <ul className="list-container">
