@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import _ from 'lodash';
+import search from '../../utils/search';
 import {vehiclesGetData} from '../../actions/vehicles';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import SortBar from '../../components/SortBar/SortBar';
@@ -15,11 +17,13 @@ class Vehicles extends Component {
       searchTerm: '',
       sortSelection: 'year',
       vehicles: [],
+      searchResults: [],
     }
 
     this.toggleSearchActive = this.toggleSearchActive.bind(this);
     this.updateSearchTerm = this.updateSearchTerm.bind(this);
     this.updateSortSelection = this.updateSortSelection.bind(this);
+    this.updateVehicleList = this.updateVehicleList.bind(this);
   }
 
   componentDidMount() {
@@ -36,22 +40,26 @@ class Vehicles extends Component {
 
   toggleSearchActive(event) {
     event.preventDefault();
-    
     this.setState(({searchActive}) => ({searchActive: !searchActive}));
   }
 
   updateSearchTerm(event) {
-    this.setState({searchTerm: event.target.value});
+    this.setState({searchTerm: event.target.value}, _.debounce(() => {this.updateVehicleList()}, 300));
+  }
+
+  updateVehicleList() {
+    let {searchTerm, vehicles, searchResults} = this.state;
+    searchResults = search(vehicles, searchTerm);
+    this.setState({searchResults});
   }
 
   updateSortSelection(event, value) {
     event.preventDefault();
-  
     this.setState(({sortSelection}) => ({sortSelection: value}));
   }
 
   render() {
-    let {searchActive, sortSelection, vehicles} = this.state;
+    let {searchActive, searchResults, sortSelection, vehicles} = this.state;
     
     vehicles = vehicles.sort((vehicleOne, vehicleTwo) => {
       vehicleOne = vehicleOne[sortSelection]; 
@@ -71,7 +79,11 @@ class Vehicles extends Component {
           sortSelection={sortSelection}
           updateSortSelection={this.updateSortSelection}
         />
-        <List vehicles={vehicles} />
+        <List 
+          searchActive={searchActive}
+          searchResults={searchResults}
+          vehicles={vehicles}
+        />
       </div>
     );
   }

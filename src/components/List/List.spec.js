@@ -30,7 +30,7 @@ describe('List', () => {
   ];
 
   beforeEach(() => {
-    wrapper = shallow(<List vehicles={vehicles} />);
+    wrapper = shallow(<List vehicles={vehicles} searchActive={false} searchResults={[]} />);
   });
 
   it('should render a wrapper <ul />', () => {

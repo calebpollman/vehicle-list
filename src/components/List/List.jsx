@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import ListItem from '../ListItem/ListItem';
 import './List.css';
 
-const List = ({vehicles}) => {
-  
+const List = ({searchActive, searchResults, vehicles}) => {
+
   if (vehicles.length === 0) {
     vehicles = <p>LOADING</p>;
   } else {
@@ -26,6 +26,8 @@ const List = ({vehicles}) => {
 }
 
 List.propTypes = {
+  searchActive: PropTypes.bool.isRequired,
+  searchResults: PropTypes.array.isRequired,
   vehicles: PropTypes.array.isRequired,
 }
 
