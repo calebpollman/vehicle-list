@@ -19,7 +19,8 @@ class Vehicle extends Component {
 
     if (vehicles !== undefined && vehicles.length > 0) {
       const id = this.props.match.params.id;
-      this.setState({vehicle: vehicles[id]})
+      const vehicle = vehicles.find(vehicle => vehicle.id.toString() === id)
+      this.setState({vehicle});
     } else {
       this.props.vehiclesGetData();
     }
