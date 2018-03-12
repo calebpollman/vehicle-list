@@ -14,6 +14,10 @@ describe('SortButton', () => {
     );
   });
 
+  it('should render correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+  
   it('should render a <Button />', () => {
     expect(wrapper.find('button').length).toEqual(1);
   });

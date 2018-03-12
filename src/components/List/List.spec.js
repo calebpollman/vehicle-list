@@ -30,7 +30,18 @@ describe('List', () => {
   ];
 
   beforeEach(() => {
-    wrapper = shallow(<List listLoading={false} searchActive={false} searchResults={[]} vehicles={vehicles} />);
+    wrapper = shallow(
+      <List 
+        listLoading={false} 
+        searchActive={false} 
+        searchResults={[]} 
+        vehicles={vehicles} 
+      />
+    );
+  });
+
+  it('should render correctly', () => {
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render a wrapper <ul />', () => {

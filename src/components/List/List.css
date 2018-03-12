@@ -1,6 +1,6 @@
 .list-container {
   align-items: center;
-  background-color: none;
+  background-color: var(--color-list-background);
   display: flex;
   flex-direction: column;
   height: var(--list-container-height);

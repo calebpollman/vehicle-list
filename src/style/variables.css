@@ -21,14 +21,14 @@ application variables
   /* color */
 
   /*  background */
-  --color-view-background: white;
+  --color-view-background: #fdfcfc;
   --color-search-bar-background: #cabdad;
   --color-sort-bar-background: #d9d0c5;
   --color-sort-button-background: #d9d0c5;
   --color-sort-button-background-hover: #cabdad;
+  --color-list-background: #fdfcfc;
   --color-list-item-background: #d9d0c5;
-  
-  
+
   /* text and icons */
   --color-search-bar-text: #433f39;
   --color-search-bar-icon: #433f39;

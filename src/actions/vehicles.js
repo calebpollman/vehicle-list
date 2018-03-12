@@ -36,9 +36,9 @@ export const vehiclesGetData = () => {
       const vehicles = response.data.map((item, i) => {
         item.id = i;
         item.year = item.year.toString();
-        item.title = `${item.year} ${item.make} ${item.model}`;
         return item;
       });
+      
       dispatch(vehiclesIsLoading(false));
       dispatch(vehiclesGetDataSuccess(vehicles));
     })

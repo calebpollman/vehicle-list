@@ -8,6 +8,10 @@ describe('SearchBar', () => {
     wrapper = shallow(<SearchBar searchActive />);
   });
 
+  it('should render correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+  
   it('renders 2 <div />\'s', () => {
     expect(wrapper.find('div').length).toEqual(2);
   });

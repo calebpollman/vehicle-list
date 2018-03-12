@@ -1,4 +1,4 @@
-# Vehicles List
+# Vehicle List
 
 ## Local Setup
 
@@ -6,7 +6,7 @@ From the Command Line:
 
 ```sh
 $ git clone git@github.com:calebpollman/vehicle-list.git
-$ cd vehicles-list
+$ cd vehicle-list
 $ cd yarn install
 ```
 

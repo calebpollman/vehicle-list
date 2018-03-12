@@ -5,6 +5,7 @@ import {LoadIcon} from '../Icons/Icons';
 import './List.css';
 
 const List = ({listLoading, searchActive, searchResults, vehicles}) => {
+  
   const renderVehicles = (vehicles) => {
     return vehicles.map(vehicle => {
       return (
@@ -35,4 +36,3 @@ List.propTypes = {
 }
 
 export default List;
-

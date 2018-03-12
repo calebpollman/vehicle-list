@@ -6,7 +6,6 @@ import {vehiclesGetData} from '../../actions/vehicles';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import SortBar from '../../components/SortBar/SortBar';
 import List from '../../components/List/List';
-import './Vehicles.css';
 
 class Vehicles extends Component {
   constructor(props) {
@@ -29,12 +28,11 @@ class Vehicles extends Component {
 
   componentDidMount() {
     const {vehicles} = this.props;
-    
-    if (vehicles && vehicles.length === 0) this.props.vehiclesGetData();
+    vehicles && vehicles.length !== 0 ? this.setState({listLoading: false, vehicles}) : this.props.vehiclesGetData();
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.vehicles !== nextProps.vehicles) {
+    if (this.props.vehicles !== nextProps.vehicles) {  
       this.setState({
         vehicles: nextProps.vehicles,
         listLoading: false

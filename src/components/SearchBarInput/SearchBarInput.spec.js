@@ -8,6 +8,10 @@ describe('SearchBarInput', () => {
     wrapper = shallow(<SearchBarInput />);
   });
 
+  it('should render correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+  
   it('renders a wrapper <div /> and an <input />', () => {
     expect(wrapper.find('div').length).toEqual(1);
     expect(wrapper.find('input').length).toEqual(1);
