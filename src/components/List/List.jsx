@@ -4,11 +4,11 @@ import ListItem from '../ListItem/ListItem';
 import {LoadIcon} from '../Icons/Icons';
 import './List.css';
 
-const List = ({searchActive, searchResults, vehicles}) => {
+const List = ({listLoading, searchActive, searchResults, vehicles}) => {
 
-  if (vehicles.length === 0) {
-    vehicles = <LoadIcon />;
-  } else {
+  listLoading ?
+    vehicles = <LoadIcon />
+  :
     vehicles = vehicles.map(vehicle => {
       return (
         <ListItem 
@@ -17,16 +17,16 @@ const List = ({searchActive, searchResults, vehicles}) => {
         />
       );
     });
-  }
   
   return (
     <ul className="list-container">
-      <LoadIcon />
+      {vehicles}
     </ul>
   );
 }
 
 List.propTypes = {
+  listLoading: PropTypes.bool.isRequired,
   searchActive: PropTypes.bool.isRequired,
   searchResults: PropTypes.array.isRequired,
   vehicles: PropTypes.array.isRequired,

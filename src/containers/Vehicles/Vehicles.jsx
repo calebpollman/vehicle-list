@@ -13,6 +13,7 @@ class Vehicles extends Component {
     super(props);
     
     this.state = {
+      listLoading: true,
       searchActive: false,
       searchTerm: '',
       sortSelection: 'year',
@@ -34,7 +35,10 @@ class Vehicles extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.vehicles !== nextProps.vehicles) {
-      this.setState({vehicles: nextProps.vehicles});
+      this.setState({
+        vehicles: nextProps.vehicles,
+        listLoading: false
+      });
     }
   }
 
@@ -59,8 +63,8 @@ class Vehicles extends Component {
   }
 
   render() {
-    let {searchActive, searchResults, sortSelection, vehicles} = this.state;
-    console.log(vehicles)
+    let {listLoading, searchActive, searchResults, sortSelection, vehicles} = this.state;
+    
     vehicles = vehicles.sort((vehicleOne, vehicleTwo) => {
       vehicleOne = vehicleOne[sortSelection]; 
       vehicleTwo = vehicleTwo[sortSelection];
@@ -74,12 +78,13 @@ class Vehicles extends Component {
           toggleSearchActive={this.toggleSearchActive}
           updateSearchTerm={this.updateSearchTerm} 
         />
-        <SortBar 
+        <SortBar
           sortOptions={['Year', 'Make', 'Model']}
           sortSelection={sortSelection}
           updateSortSelection={this.updateSortSelection}
         />
-        <List 
+        <List
+          listLoading={listLoading}
           searchActive={searchActive}
           searchResults={searchResults}
           vehicles={vehicles}
