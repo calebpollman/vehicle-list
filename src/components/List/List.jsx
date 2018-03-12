@@ -7,7 +7,8 @@ import './List.css';
 const List = ({listLoading, searchActive, searchResults, vehicles}) => {
   
   const renderVehicles = (vehicles) => {
-    return vehicles.map(vehicle => {
+    
+    return vehicles.map(vehicle => {  
       const vehicleTitle = `${vehicle.year} ${vehicle.make} ${vehicle.model}`;
       return (
         <ListItem 
@@ -24,7 +25,7 @@ const List = ({listLoading, searchActive, searchResults, vehicles}) => {
   vehicles = renderVehicles(searchResults) : vehicles = renderVehicles(vehicles);
   
   return (
-    <ul className="list-container">
+    <ul className={listLoading ? "list-container list-container-loading" : "list-container"}>
       {vehicles}
     </ul>
   );

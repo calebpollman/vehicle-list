@@ -1,9 +1,12 @@
 .list-container {
-  align-items: center;
   background-color: var(--color-list-background);
+  height: var(--list-container-height);
+  overflow: scroll;
+}
+
+.list-container-loading {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  height: var(--list-container-height);
   justify-content: center;
-  overflow: scroll;
 }

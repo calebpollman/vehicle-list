@@ -63,12 +63,16 @@ class Vehicles extends Component {
   render() {
     let {listLoading, searchActive, searchResults, sortSelection, vehicles} = this.state;
     
-    vehicles = vehicles.sort((vehicleOne, vehicleTwo) => {
-      vehicleOne = vehicleOne[sortSelection]; 
-      vehicleTwo = vehicleTwo[sortSelection];
-      return ((vehicleOne < vehicleTwo) ? -1 : ((vehicleOne > vehicleTwo) ? 1 : 0));
-    });
-
+    const sortVehicles = (sortSelection, vehicles) => {
+      return vehicles.sort((vehicleOne, vehicleTwo) => {
+        vehicleOne = vehicleOne[sortSelection]; 
+        vehicleTwo = vehicleTwo[sortSelection];
+        return ((vehicleOne < vehicleTwo) ? -1 : ((vehicleOne > vehicleTwo) ? 1 : 0));
+      });
+    }
+    
+    vehicles = sortVehicles(sortSelection, vehicles);
+    
     return (
       <div className="view-container">
         <SearchBar 
